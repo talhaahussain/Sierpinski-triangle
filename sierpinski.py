@@ -2,7 +2,7 @@ import turtle
 import random 
 
 t = turtle.Turtle()
-t.width(5)
+t.width(0.1)
 t.shape("circle")
 t.penup()
 t.speed(0)
@@ -42,3 +42,18 @@ def findMidpoint(p, a):
     y = (p[1] + a[1])/2
     m = (x, y)
     return m
+
+generateTriangle(t, vertices)
+
+p = choosePoint(vertices)
+t.goto(p)
+t.dot()
+t.penup()
+
+while True:
+    a = random.choice(vertices)
+    p = findMidpoint(p, a)
+    t.goto(p)
+    t.dot()
+    t.penup()
+
