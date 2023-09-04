@@ -36,3 +36,9 @@ def choosePoint(vertices):
         else:
             continue
     return p
+
+def findMidpoint(p, a):
+    x = (p[0] + a[0])/2
+    y = (p[1] + a[1])/2
+    m = (x, y)
+    return m
