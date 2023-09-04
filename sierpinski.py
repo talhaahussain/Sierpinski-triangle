@@ -16,9 +16,23 @@ def generateTriangle(t, vertices):
         t.penup()
     return
 
-def choosePoint(vertices):
-    x = random.uniform(vertices[1][0], vertices[2][0])
-    y = random.uniform(vertices[0][1], vertices[2][1])
-    p = (x, y)
+def inTriangle(p, v):
+    a = ((v[1][1] - v[2][1])*(p[0] - v[2][0]) + (v[2][0] - v[1][0])*(p[1] - v[2][1])) / ((v[1][1] - v[2][1])*(v[0][0] - v[2][0]) + (v[2][0] - v[1][0])*(v[0][1] - v[2][1]))
+    b = ((v[2][1] - v[0][1])*(p[0] - v[2][0]) + (v[0][0] - v[2][0])*(p[1] - v[2][1])) / ((v[1][1] - v[2][1])*(v[0][0] - v[2][0]) + (v[2][0] - v[1][0])*(v[0][1] - v[2][1]))
+    c = 1 - a - b
 
-generateTriangle(t, vertices)
+    if (0 <= a <= 1) and (0 <= b <= 1) and (0 <= c <= 1):        
+        return True
+    else:
+        return False
+
+def choosePoint(vertices):
+    while 1:
+        x = random.uniform(vertices[1][0], vertices[2][0])
+        y = random.uniform(vertices[0][1], vertices[2][1])
+        p = (x, y)
+        if (inTriangle(p, vertices)):
+            break
+        else:
+            continue
+    return p
