@@ -2,12 +2,22 @@ import turtle
 import random 
 
 t = turtle.Turtle()
+iters = turtle.Turtle()
 t.width(0.1)
-t.shape("circle")
+t.hideturtle()
+iters.hideturtle()
 t.penup()
 t.speed(0)
+turtle.bgcolor("black")
+t.pencolor("white")
+iters.pencolor("white")
+count = 0
+iters.goto(0, 0)
+iters.pendown()
+iters.write("Iteration: " + str(count))
+iters.penup()
 
-vertices = [(0, 250), (-216.506, -125), (216.506, -125)]
+vertices = [(0, 350), (-303.109, -175), (303.109, -175)]
 
 def generateTriangle(t, vertices):
     for v in vertices:
@@ -56,4 +66,9 @@ while True:
     t.goto(p)
     t.dot()
     t.penup()
-
+    count += 1
+    iters.goto(300, 0)
+    iters.pendown()
+    iters.clear()
+    iters.write("Iteration: " + str(count))
+    iters.penup()
