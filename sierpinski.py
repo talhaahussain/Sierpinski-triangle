@@ -2,20 +2,20 @@ import turtle
 import random 
 
 t = turtle.Turtle()
-iters = turtle.Turtle()
+#iters = turtle.Turtle()
 t.width(0.1)
 t.hideturtle()
-iters.hideturtle()
+#iters.hideturtle()
 t.penup()
 t.speed(0)
 turtle.bgcolor("black")
 t.pencolor("white")
-iters.pencolor("white")
+#iters.pencolor("white")
 count = 0
-iters.goto(0, 0)
-iters.pendown()
-iters.write("Iteration: " + str(count))
-iters.penup()
+#iters.goto(0, 0)
+#iters.pendown()
+#iters.write("Iteration: " + str(count))
+#iters.penup()
 
 vertices = [(0, 350), (-303.109, -175), (303.109, -175)]
 
@@ -67,8 +67,8 @@ while True:
     t.dot()
     t.penup()
     count += 1
-    iters.goto(300, 0)
-    iters.pendown()
-    iters.clear()
-    iters.write("Iteration: " + str(count))
-    iters.penup()
+    #iters.goto(300, 0)
+    #iters.pendown()
+    #iters.clear()
+    #iters.write("Iteration: " + str(count))
+    #iters.penup()
